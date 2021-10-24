@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "k-mega"
 include ':app'
+include ':libSrc'
