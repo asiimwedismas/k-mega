@@ -8,7 +8,7 @@ jobs:
   unit-test:
     executor:
       name: android/android-machine
-      resource-class: xlarge
+#      resource-class: xlarge
     steps:
       - checkout
       - android/restore-gradle-cache
@@ -35,7 +35,7 @@ jobs:
         default: system-images;android-30;google_apis;x86
     executor:
       name: android/android-machine
-      resource-class: xlarge
+#      resource-class: xlarge
     steps:
       - checkout
       - android/start-emulator-and-run-tests:
@@ -55,7 +55,7 @@ jobs:
   benchmarks-emulator:
     executor:
       name: android/android-machine
-      resource-class: xlarge
+#      resource-class: xlarge
 
     steps:
       - checkout
@@ -116,7 +116,7 @@ jobs:
   release-build:
     executor:
       name: android/android-machine
-      resource-class: xlarge
+#      resource-class: xlarge
     steps:
       - checkout
       - android/restore-gradle-cache
@@ -153,14 +153,14 @@ workflows:
           filters:
             branches:
               only: main # Commits to main branch
-      - benchmarks-emulator
-      - benchmarks-ftl
-      - release-build:
-          requires:
-            - unit-test
-            - android-test-all
+#      - benchmarks-emulator
+#      - benchmarks-ftl
+#      - release-build:
+#          requires:
+#            - unit-test
+#            - android-test-all
 #            - benchmarks-emulator
 #            - benchmarks-ftl
-          filters:
-            branches:
-              only: main # Commits to main branch
+#          filters:
+#            branches:
+#              only: main # Commits to main branch
