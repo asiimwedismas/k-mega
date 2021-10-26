@@ -18,8 +18,6 @@ jobs:
   ## 4
   android_tests:
     runs-on: macos-latest
-    container:
-      image: docker://fabernovel/android:api-29-v1.1.0
     steps:
       - uses: actions/checkout@v2
 
