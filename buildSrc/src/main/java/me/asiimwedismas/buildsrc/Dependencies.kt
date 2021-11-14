@@ -1,11 +1,11 @@
-package me.asiimwedismas.libsrc
+package me.asiimwedismas.buildsrc
 
 object Versions {
     const val ktLint = "0.42.1"
 }
 
 object Libs {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.2"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.3"
     const val ktLint = "com.pinterest:ktlint:${Versions.ktLint}"
 
     object GoogleMaps {
@@ -23,7 +23,7 @@ object Libs {
     }
 
     object Kotlin {
-        private const val version = "1.5.30"
+        private const val version = "1.5.31"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
@@ -61,6 +61,7 @@ object Libs {
             private const val version = "2.4.0-rc01"
             const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
             const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+            const val runTimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
         }
 
         object Test {
