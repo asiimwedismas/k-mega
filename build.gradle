@@ -7,7 +7,7 @@ import me.asiimwedismas.buildsrc.Versions
 
 buildscript {
     ext {
-        compose_version = '1.0.4'
+        compose_version = '1.0.5'
     }
     repositories {
         google()
@@ -16,7 +16,6 @@ buildscript {
         classpath Libs.androidGradlePlugin
         classpath Libs.Kotlin.gradlePlugin
         classpath Libs.Hilt.gradlePlugin
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0'
     }
 }
 
