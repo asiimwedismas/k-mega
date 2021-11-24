@@ -7,3 +7,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "k-mega"
 include ':app'
+include ':bakery-module'
+include ':fuel-module'
+include ':finances-module'
+include ':restaurant-module'
+include ':hr-module'
