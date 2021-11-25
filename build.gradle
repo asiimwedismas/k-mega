@@ -16,7 +16,6 @@ buildscript {
         classpath Libs.androidGradlePlugin
         classpath Libs.Kotlin.gradlePlugin
         classpath Libs.Hilt.gradlePlugin
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0'
     }
 }
 
