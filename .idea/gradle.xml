@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/fuel-module" />
             <option value="$PROJECT_DIR$/hr-module" />
             <option value="$PROJECT_DIR$/restaurant-module" />
+            <option value="$PROJECT_DIR$/store-module" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
