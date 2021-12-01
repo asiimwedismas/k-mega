@@ -94,6 +94,13 @@ object Libs {
     object Coil {
         const val coilCompose = "io.coil-kt:coil-compose:1.3.2"
     }
+
+    object Room {
+        private const val version = "2.3.0"
+        const val room = "androidx.room:room-runtime:$version"
+        const val annotationProcessor = "androidx.room:room-compiler:$version"
+        const val testHelper = "androidx.room:room-testing:$version"
+    }
 }
 
 object Urls {
