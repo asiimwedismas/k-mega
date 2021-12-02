@@ -1,8 +1,7 @@
 package me.asiimwedismas.bakery_module.domain.model
 
 data class BakeryInvoiceItem(
-    var product_id: Int = 0,
-    var product_name: String? = null,
+    var product_name: String,
     var qty: Int = 0,
     var factory_profit: Double = 0.0,
     var outlet_profit: Double = 0.0,
@@ -11,35 +10,32 @@ data class BakeryInvoiceItem(
     var total_factory_sale: Double = 0.0,
     var total_outlet_sale: Double = 0.0
 ) {
-    fun calculate(product: BakeryProduct) {
+}
 
-        val ingredientsCostPerBag = product.ingredients_cost_per_bag
-        val fixedCop = product.fixed_cop
-        val kavera = product.kavera
-        val wholesalePrice = product.wholesale_price
-        val retailPrice = product.retail_price
-        val agentPrice = product.agent_price
-        val outPerBag = product.out_per_bag
-        val packagePerBag = kavera * outPerBag
+fun BakeryInvoiceItem.calculateSalesAndProfits(product: BakeryProduct) {
 
-        val factoryBagProfitGross =
-            (outPerBag * wholesalePrice - ingredientsCostPerBag - packagePerBag)
+    val ingredientsCostPerBag = product.ingredients_cost_per_bag
+    val kavera = product.kavera
+    val wholesalePrice = product.wholesale_price
+    val retailPrice = product.retail_price
+    val agentPrice = product.agent_price
+    val outPerBag = product.out_per_bag
+    val packagePerBag = kavera * outPerBag
 
-        val outletBagProfitGross =
-            (outPerBag * retailPrice - ingredientsCostPerBag - packagePerBag)
+    val factoryBagProfitGross =
+        (outPerBag * wholesalePrice - ingredientsCostPerBag - packagePerBag)
 
-        val agentBagProfitGross =
-            (outPerBag * agentPrice - ingredientsCostPerBag - packagePerBag)
+    val outletBagProfitGross =
+        (outPerBag * retailPrice - ingredientsCostPerBag - packagePerBag)
 
-        val factoryNetProfit = (factoryBagProfitGross - fixedCop) / outPerBag
-        val outletNetProfit = (outletBagProfitGross - fixedCop) / outPerBag
-        val agentNetProfit = (agentBagProfitGross - fixedCop) / outPerBag
+    val agentBagProfitGross =
+        (outPerBag * agentPrice - ingredientsCostPerBag - packagePerBag)
 
-        total_factory_sale = wholesalePrice * qty
-        factory_profit = factoryNetProfit * qty
-        total_outlet_sale = retailPrice * qty
-        outlet_profit = outletNetProfit * qty
-        total_agent_sale = agentPrice * qty
-        agent_profit = agentNetProfit * qty
-    }
+    total_factory_sale = wholesalePrice * qty
+    total_outlet_sale = retailPrice * qty
+    total_agent_sale = agentPrice * qty
+
+    factory_profit = factoryBagProfitGross / outPerBag * qty
+    outlet_profit = outletBagProfitGross / outPerBag * qty
+    agent_profit = agentBagProfitGross / outPerBag * qty
 }

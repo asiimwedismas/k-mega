@@ -11,5 +11,5 @@ data class BakeryIngredient(
     var ingredient_pack_unit: String? = null,
     var ingredient_unit_price: Double = 0.0
 ) {
-    override fun toString() = ingredient_name!!
+    override fun toString() = ingredient_name
 }
