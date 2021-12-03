@@ -42,6 +42,8 @@ object Libs {
 
         const val appcompat = "androidx.appcompat:appcompat:1.3.0"
 
+        const val coreKTX = "androidx.core:core-ktx:1.7.0"
+
         object Compose {
             const val snapshot = ""
             const val version = "1.0.5"
@@ -64,6 +66,13 @@ object Libs {
             const val runTimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
         }
 
+        object Room {
+            private const val version = "2.3.0"
+            const val room = "androidx.room:room-runtime:$version"
+            const val annotationProcessor = "androidx.room:room-compiler:$version"
+            const val testHelper = "androidx.room:room-testing:$version"
+        }
+
         object Test {
             private const val version = "1.4.0"
             const val core = "androidx.test:core:$version"
@@ -75,6 +84,7 @@ object Libs {
             }
             const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
         }
+
     }
 
     object Hilt {
@@ -86,6 +96,11 @@ object Libs {
         const val testing = "com.google.dagger:hilt-android-testing:$version"
     }
 
+    object Material {
+        private const val version = "1.4.0"
+        const val material = "com.google.android.material:material:$version"
+    }
+
     object JUnit {
         private const val version = "4.13"
         const val junit = "junit:junit:$version"
@@ -95,12 +110,12 @@ object Libs {
         const val coilCompose = "io.coil-kt:coil-compose:1.3.2"
     }
 
-    object Room {
-        private const val version = "2.3.0"
-        const val room = "androidx.room:room-runtime:$version"
-        const val annotationProcessor = "androidx.room:room-compiler:$version"
-        const val testHelper = "androidx.room:room-testing:$version"
+    object Truth {
+        private const val version = "1.1.3"
+        const val truth = "com.google.truth:truth:$version"
+        const val java8Extension = "com.google.truth.extensions:truth-java8-extension:$version"
     }
+
 }
 
 object Urls {

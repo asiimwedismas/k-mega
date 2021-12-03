@@ -1,3 +1,5 @@
+import me.asiimwedismas.buildsrc.Libs
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -33,10 +35,17 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.Kotlin.Coroutines.android
+
+    implementation Libs.Material.material
+
+    implementation Libs.AndroidX.appcompat
+    implementation Libs.AndroidX.coreKTX
+    implementation Libs.AndroidX.Room.room
+    implementation Libs.AndroidX.Room.annotationProcessor
+
+    testImplementation Libs.JUnit.junit
+    testImplementation Libs.Truth.truth
+
 }
