@@ -45,12 +45,11 @@ object Libs {
         const val coreKTX = "androidx.core:core-ktx:1.7.0"
 
         object Compose {
-            const val snapshot = ""
-            const val version = "1.0.5"
+            const val version = "1.1.0-beta01"
 
             const val runtime = "androidx.compose.runtime:runtime:$version"
             const val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$version"
-            const val material = "androidx.compose.material:material:$version"
+            const val material = "androidx.compose.material3:material3:1.0.0-alpha01"
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
             const val tooling = "androidx.compose.ui:ui-tooling:$version"
@@ -97,12 +96,12 @@ object Libs {
     }
 
     object Material {
-        private const val version = "1.4.0"
+        private const val version = "1.5.0-alpha04"
         const val material = "com.google.android.material:material:$version"
     }
 
     object JUnit {
-        private const val version = "4.13"
+        private const val version = "4.13.2"
         const val junit = "junit:junit:$version"
     }
 
@@ -118,8 +117,8 @@ object Libs {
 
 }
 
-object Urls {
-    const val mavenCentralSnapshotRepo = "https://oss.sonatype.org/content/repositories/snapshots/"
-    const val composeSnapshotRepo = "https://androidx.dev/snapshots/builds/" +
-            "${Libs.AndroidX.Compose.snapshot}/artifacts/repository/"
-}
+//object Urls {
+//    const val mavenCentralSnapshotRepo = "https://oss.sonatype.org/content/repositories/snapshots/"
+//    const val composeSnapshotRepo = "https://androidx.dev/snapshots/builds/" +
+//            "${Libs.AndroidX.Compose.snapshot}/artifacts/repository/"
+//}

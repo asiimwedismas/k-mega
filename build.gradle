@@ -2,15 +2,12 @@
 // where you can add configuration options common to all sub-projects/modules.
 
 import me.asiimwedismas.buildsrc.Libs
-import me.asiimwedismas.buildsrc.Urls
 import me.asiimwedismas.buildsrc.Versions
 
 buildscript {
-    ext {
-        compose_version = '1.0.5'
-    }
     repositories {
         google()
+        mavenCentral()
     }
     dependencies {
         classpath Libs.androidGradlePlugin
@@ -27,14 +24,6 @@ subprojects {
     repositories {
         google()
         mavenCentral()
-
-        if (!Libs.AndroidX.Compose.snapshot.isEmpty()) {
-            maven { url Urls.composeSnapshotRepo }
-        }
-
-        if (Libs.Accompanist.version.endsWith('SNAPSHOT')) {
-            maven { url Urls.mavenCentralSnapshotRepo }
-        }
     }
 
     apply plugin: 'com.diffplug.spotless'
@@ -53,10 +42,10 @@ subprojects {
             // Treat all Kotlin warnings as errors (disabled by default)
             allWarningsAsErrors = project.hasProperty("warningsAsErrors") ? project.warningsAsErrors : false
 
-            jvmTarget = "1.8"
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
 
             // Use experimental APIs
-            freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
+//            freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
         }
     }
     // androidx.test and hilt are forcing JUnit, 4.12. This forces them to use 4.13

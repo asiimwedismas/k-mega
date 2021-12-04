@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "me.asiimwedismas.kmega"
-        minSdk 21
+        minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -41,12 +41,16 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion Libs.AndroidX.Compose.version
     }
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
+    }
+
+    configurations {
+         implementation.exclude group: 'org.jetbrains', module: 'annotations'
     }
 }
 
@@ -91,4 +95,6 @@ dependencies {
     androidTestImplementation Libs.Hilt.android
     androidTestImplementation Libs.Hilt.testing
     kaptAndroidTest Libs.Hilt.compiler
+
+    implementation project(path: ':core-module')
 }
