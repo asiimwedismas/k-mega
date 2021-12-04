@@ -1,6 +1,6 @@
 package me.asiimwedismas.bakery_module.domain.model
 
-class FactoryProductionItem(
+data class FactoryProductionItem(
     var product_name: String,
     var produced_qty: Int,
     var buvera: Double,

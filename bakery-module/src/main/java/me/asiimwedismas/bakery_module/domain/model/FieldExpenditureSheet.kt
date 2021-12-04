@@ -2,7 +2,7 @@ package me.asiimwedismas.bakery_module.domain.model
 
 import java.util.ArrayList
 
-class FieldExpenditureSheet(
+data class FieldExpenditureSheet(
     var document_id: String,
     var document_author_id: String,
     var document_author_name: String,
