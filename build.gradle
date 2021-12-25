@@ -10,7 +10,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath Libs.androidGradlePlugin
+        classpath 'com.android.tools.build:gradle:7.0.4'
         classpath Libs.Kotlin.gradlePlugin
         classpath Libs.Hilt.gradlePlugin
     }

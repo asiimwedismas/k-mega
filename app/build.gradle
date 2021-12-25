@@ -48,17 +48,12 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
-
-    configurations {
-         implementation.exclude group: 'org.jetbrains', module: 'annotations'
-    }
 }
 
 dependencies {
 
     implementation Libs.Material.material
 
-    implementation Libs.Kotlin.stdlib
     implementation Libs.Kotlin.Coroutines.android
 
     implementation Libs.Accompanist.insets

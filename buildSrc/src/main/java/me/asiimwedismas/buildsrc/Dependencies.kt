@@ -5,7 +5,6 @@ object Versions {
 }
 
 object Libs {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.3"
     const val ktLint = "com.pinterest:ktlint:${Versions.ktLint}"
 
     object GoogleMaps {
@@ -24,7 +23,6 @@ object Libs {
 
     object Kotlin {
         private const val version = "1.5.31"
-        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
 
@@ -38,6 +36,11 @@ object Libs {
     object AndroidX {
         object Activity {
             const val activityCompose = "androidx.activity:activity-compose:1.3.1"
+        }
+
+        object Arch {
+            private const val version = "2.0.0"
+            const val coreTesting = "androidx.arch.core:core-testing:$version"
         }
 
         const val appcompat = "androidx.appcompat:appcompat:1.3.0"
@@ -66,9 +69,10 @@ object Libs {
         }
 
         object Room {
-            private const val version = "2.3.0"
+            private const val version = "2.4.0"
+            const val ktx = "androidx.room:room-ktx:$version"
             const val room = "androidx.room:room-runtime:$version"
-            const val annotationProcessor = "androidx.room:room-compiler:$version"
+            const val compiler = "androidx.room:room-compiler:$version"
             const val testHelper = "androidx.room:room-testing:$version"
         }
 
@@ -78,20 +82,20 @@ object Libs {
             const val runner = "androidx.test:runner:$version"
             const val rules = "androidx.test:rules:$version"
             object Ext {
-                private const val version = "1.1.2"
+                private const val version = "1.1.3"
                 const val junit = "androidx.test.ext:junit-ktx:$version"
             }
-            const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
+            const val espressoCore = "androidx.test.espresso:espresso-core:3.4.0"
         }
 
     }
 
     object Hilt {
-        private const val version = "2.39"
+        private const val version = "2.40"
 
         const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
         const val android = "com.google.dagger:hilt-android:$version"
-        const val compiler = "com.google.dagger:hilt-compiler:$version"
+        const val compiler = "com.google.dagger:hilt-android-compiler:$version"
         const val testing = "com.google.dagger:hilt-android-testing:$version"
     }
 
